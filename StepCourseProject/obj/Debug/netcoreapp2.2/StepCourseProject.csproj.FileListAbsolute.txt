@@ -170,3 +170,4 @@ C:\Users\User\Desktop\Project1Level-master\StepCourseProject\bin\Debug\netcoreap
 C:\Users\User\Desktop\Project1Level-master\StepCourseProject\bin\Debug\netcoreapp2.2\StepCourseProject.Views.pdb
 C:\Users\User\Desktop\Project1Level-master\StepCourseProject\obj\Debug\netcoreapp2.2\StepCourseProject.Views.pdb
 C:\Users\User\Desktop\Project1Level-master\StepCourseProject\obj\Debug\netcoreapp2.2\StepCourseProject.csproj.CopyComplete
+C:\Users\User\Desktop\Project1Level-master\StepCourseProject\obj\Debug\netcoreapp2.2\Razor\Views\Project\My.cshtml.g.cs

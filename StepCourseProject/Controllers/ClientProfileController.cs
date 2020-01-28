@@ -42,7 +42,6 @@ namespace StepCourseProject.Controllers
                 PhoneNumber = user.PhoneNumber,
                 Description = user.Description
             };
-
             return View(vm);
         }
 

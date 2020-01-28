@@ -4,14 +4,12 @@
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
-
   <ItemGroup>
     <Compile Remove="Migrations\20200102152945_initial.cs" />
     <Compile Remove="Migrations\20200102152945_initial.Designer.cs" />
     <Compile Remove="Migrations\20200104100822_init_user_edit.cs" />
     <Compile Remove="Migrations\20200104100822_init_user_edit.Designer.cs" />
   </ItemGroup>
-
   <ItemGroup>
     <None Remove="Data\tabIcon.jpg" />
   </ItemGroup>

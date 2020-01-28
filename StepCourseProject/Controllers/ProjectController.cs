@@ -12,7 +12,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace StepCourseProject.Controllers
 {
     [Authorize(Roles = "Freelancer")]
@@ -66,7 +65,7 @@ namespace StepCourseProject.Controllers
             return View(data);
         }
 
-        [HttpGet] //UI yoxdur
+        [HttpGet] 
         public IActionResult Details(int id)
         {           
             var entity = postService.GetPostDetail(id);
@@ -100,7 +99,6 @@ namespace StepCourseProject.Controllers
         {
             var currentUser = await userManager.FindByNameAsync(User.Identity.Name);
             string currentUserId = currentUser.Id;
-
             var entity = await context.Posts.Include(i => i.FreelancerPosts)
                 .Include(i => i.AppUser)
                 .Include(i => i.Bids)
@@ -113,17 +111,17 @@ namespace StepCourseProject.Controllers
                     PostDeadLine = i.PostDeadLine,
                     PostDescription = i.PostDescription,
                     PostName = i.PostName,
-                    PostPrice = i.Bids
-                    .Where(b => b.PostId == i.Id && b.AppUserId == currentUserId && b.IsDone == true && b.Status == BidStatus.Accepted)
-                    .Select(b => b.BidPrice)
+                    PostPrice = context.Bids.Include(a=>a.AppUser)
+                    .Include(a=>a.Post)
+                    .Where(a=>a.PostId==i.Id && a.AppUserId==currentUserId && a.IsDone==true)
+                    .Select(a=>a.BidPrice)
                     .FirstOrDefault()
                 })
                 .ToListAsync();
-
-
-            return View();
+            return View(entity);
         }
 
+        
         public async Task<IActionResult> AllFreeLancers()
         {
             var currentUser = await userManager.FindByNameAsync(User.Identity.Name);

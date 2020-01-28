@@ -7,21 +7,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-
 namespace StepCourseProject.Areas.Client.ViewComponents
 {
     public class NotificationClientViewComponent:ViewComponent
     {
-
         private readonly AppDbContext context;
         private readonly UserManager<AppUser> userManager;
-
         public NotificationClientViewComponent(AppDbContext context, UserManager<AppUser> userManager)
         {
             this.context = context;
             this.userManager = userManager;
         }
-
         public async Task<IViewComponentResult> InvokeAsync()
         {
             var currentUserName = User.Identity.Name;
